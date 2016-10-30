@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Items in stock</h2>
+<hr>
+{% if items %}
+<ul>
+    {% for item in items  %}
+    	<li>
+    		<a href="{% url  'item_detail' item.id %}">
+    			{{ item.title | capfirst}}
+    		</a>
+    	</li>
+    {% endfor %}
+</ul>
+{% else %}
+<span style="color:red">No item to be displayed.</span>
+{% endif %}	
+{% endblock content %}
