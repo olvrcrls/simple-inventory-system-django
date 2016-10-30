@@ -7,7 +7,7 @@ def index(request):
 	items = Item.objects.exclude(amount=0)
 	return render(request, 'inventory/index.html', {
 		'items': items
-		})
+		}) # displays home page
 
 def item_detail(request, id):
 	try:
@@ -16,5 +16,5 @@ def item_detail(request, id):
 		raise Http404('This item does not exist')
 	return render(request, 'inventory/item_detail.html', {
 		'item': item
-		})
+		}) # displays item specific page
 
